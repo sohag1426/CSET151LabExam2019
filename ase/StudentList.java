@@ -4,7 +4,10 @@ import java.text.*;
 import java.util.*;
 public class StudentList {
 	public static void main(String[] args) {
-
+    if(args.length == 0){
+		System.out.println("Usage: java ase.StudentList (a|r|c|?word|+word)");
+		return;
+	}
 //		Check arguments
 		if(args[0].equals("a"))
 		{
