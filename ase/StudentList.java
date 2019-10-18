@@ -4,7 +4,7 @@ import java.text.*;
 import java.util.*;
 import static  ase.Constants.*;
 public class StudentList {
-
+    //Data Reader
 	public  static String LoadData(){
 		System.out.println(StartDialog);
 		String contents = null;
@@ -18,7 +18,7 @@ public class StudentList {
 		}
 		return  contents;
 	}
-
+     // Data Writer
 	public  static  void  WirteData(String[] args){
 		System.out.println(StartDialog);
 		try {
@@ -29,13 +29,13 @@ public class StudentList {
 			String df = DateFormat;
 			DateFormat dateFormat = new SimpleDateFormat(df);
 			String fd= dateFormat.format(d);
-			s.write(", "+t+"\nList last updated on "+fd);
+			s.write(", "+ t);
 			s.close();
 		} catch (Exception e){}
 
 		System.out.println(EndDialog);
 	}
-
+    //Main Method
 	public static void main(String[] args) {
     if(args.length == 0){
 		System.out.println(Usage);
@@ -81,9 +81,10 @@ public class StudentList {
 			String contents = LoadData();
 			String words[] = contents.split(",");
 			char a[] = contents.toCharArray();
-			System.out.println(words.length +" word(s) found Character" + a.length);
+			System.out.println(words.length + WordCountMsg + a.length);
 			System.out.println(EndDialog);
 		}else {
+			//handling Invalid Arguments
 			System.out.println(InvalidMsg);
 			return;
 		}
